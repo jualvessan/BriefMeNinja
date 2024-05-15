@@ -1,0 +1,16 @@
+{% block content %}
+<h1>Insira seu texto aqui</h1>
+
+<form method="post">
+    {% csrf_token %}
+    <textarea name="texto_completo" rows="10" cols="80"></textarea>
+    <br>
+    <button type="submit">Enviar</button>
+</form>
+
+{% if texto %}
+<h2>Resumo</h2>
+<p>{{ texto.resumo_automatico }}</p>
+<a href="{% url 'resumo:gerar_resumo'texto.id %}">Gerar outro resumo</a>
+{% endif %}
+{% endblock %}

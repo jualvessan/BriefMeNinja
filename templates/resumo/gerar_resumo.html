@@ -1,0 +1,7 @@
+# resumo/gerar_resumo.html
+
+{% block content %}
+<h1>Resumo</h1>
+<p>{{ texto.resumo_automatico }}</p>
+<a href="{% url 'resumo:inserir_texto' %}">Inserir outro texto</a>
+{% endblock %}
